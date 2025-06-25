@@ -15,7 +15,7 @@ service: postlight
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs18.x
   # If you want to change to a different AWS profile
   # from ~/.aws/credentials, you can do so here
   profile: default
@@ -27,7 +27,7 @@ custom:
   webpack:
     webpackConfig: ./webpack.config.js
     includeModules: true
-    packager: 'yarn' # Packager that will be used to package your external modules
+    packager: 'npm' # Packager that will be used to package your external modules
 
 functions:
   postlightParser:

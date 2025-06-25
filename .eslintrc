@@ -1,25 +1,34 @@
 {
   "extends": ["airbnb", "prettier"],
-  "globals": {
-    "afterAll": true,
-    "afterEach": true,
-    "beforeAll": true,
-    "beforeEach": true,
-    "describe": true,
-    "expect": true,
-    "fit": true,
-    "it": true,
-    "jasmine": true,
-    "xit": true,
+  "env": {
+    "node": true,
+    "es2022": true,
     "jest": true
   },
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "globals": {
+    "afterAll": "readonly",
+    "afterEach": "readonly",
+    "beforeAll": "readonly",
+    "beforeEach": "readonly",
+    "describe": "readonly",
+    "expect": "readonly",
+    "fit": "readonly",
+    "it": "readonly",
+    "xit": "readonly",
+    "jest": "readonly"
+  },
   "settings": {
-    "plugins": ["import"],
-    "rules": {
-      "import/no-unresolved": "error"
-    },
     "import/resolver": {
       "typescript": {}
     }
+  },
+  "rules": {
+    "import/no-unresolved": "error",
+    "import/extensions": ["error", "ignorePackages"],
+    "no-console": "off"
   }
 }

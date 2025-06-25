@@ -6,11 +6,20 @@ module.exports = {
   target: 'node',
   mode: slsw.lib.webpack.isLocal ? 'development' : 'production',
   externals: [nodeExternals()],
+  optimization: {
+    minimize: false,
+  },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: {
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true,
+            experimentalWatchApi: true,
+          },
+        },
         exclude: /node_modules/,
       },
       {
@@ -19,6 +28,9 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
         },
       },
     ],
@@ -26,4 +38,5 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
+  devtool: slsw.lib.webpack.isLocal ? 'eval-source-map' : 'source-map',
 };
