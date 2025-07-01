@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for parser-api-wj-4-g on 2025-06-26T00:08:22Z
+# fly.toml app configuration file generated for parser-api-lf4e9q on 2025-07-01T13:43:34Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'parser-api-wj-4-g'
-primary_region = 'cdg'
+app = 'parser-api-lf4e9q'
+primary_region = 'ams'
 
 [build]
 
